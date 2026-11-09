@@ -1,13 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acme App</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <!-- Start Coding Here -->
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#f5f5fa] min-h-screen">
+
+  
+<main class="max-w-5xl mx-auto px-4 pt-10">
+
+  <div class="bg-white rounded-2xl py-12 px-6">
+    
+<h1 class="text-3xl font-bold text-center text-[#1d1b2e] mb-8">
+  Get in Touch
+</h1>
+
+<form class="max-w-md mx-auto flex flex-col gap-4">
+    
+<div>
+  <label for="name" class="block text-sm text-gray-500 mb-1">
+    Name
+  </label>
+
+  <input
+    type="text"
+    id="name"
+    placeholder="John Doe"
+    class="w-full border border-gray-200 rounded-lg p-3"
+  >
+</div>
+
+
+<div>
+  <label for="email" class="block text-sm text-gray-500 mb-1">
+    Email
+  </label>
+
+  <input
+    type="email"
+    id="email"
+    placeholder="john@example.com"
+    class="w-full border border-gray-200 rounded-lg p-3"
+  >
+</div>
+
+
+<div>
+  <label for="message" class="block text-sm text-gray-500 mb-1">
+    Message
+  </label>
+
+  <textarea
+    id="message"
+    placeholder="Your message..."
+    rows="4"
+    class="w-full border border-gray-200 rounded-lg p-3"
+  ></textarea>
+</div>
+
+
+<button
+  type="submit"
+  class="bg-[#1d1b2e] text-white py-3 rounded-lg font-semibold hover:bg-gray-700 cursor-pointer"
+>
+  Submit
+</button>
+
+
+</form>
+
+  </div>
+
+  
+<footer class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 text-sm">
+
+  <p class="text-gray-500">
+    Acme productivity app ©2024
+  </p>
+
+  <div class="flex gap-6 font-semibold text-[#1d1b2e]">
+    <a href="#">FAQ</a>
+    <a href="#">Terms</a>
+    <a href="#">AI Policy</a>
+    <a href="#">Pricing</a>
+  </div>
+
+</footer>
+
+
+</main>
+
+
+</body>
+
 </html>
