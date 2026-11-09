@@ -7,8 +7,48 @@
     <title>Acme App</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <!-- Section-1 -->
+  <body >
+        <!-- Section-1 -->
+        <header class="w-full bg-[#f6f6fb] pt-6 pb-24 px-4 sm:px-6 lg:px-8">
+          <!-- Navbar Wrapper -->
+          <div class="max-w-6xl mx-auto">
+            <nav class="bg-white rounded-full px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-slate-100 flex items-center justify-between">
+              <!-- Logo: logo.png -->
+              <a href="#" class="flex items-center select-none">
+                <img src="logo.png" alt="Acme Logo" class="h-7 sm:h-8 w-auto" />
+              </a>
+              <!-- Navigation Links -->
+              <div class="flex items-center space-x-6 sm:space-x-10 text-sm font-medium text-[#1a1a2b]">
+                <a href="#home" class="hover:text-gray-500 transition-colors">Home</a>
+                <a href="#features" class="hover:text-gray-500 transition-colors">Features</a>
+                <a href="#pricing" class="hover:text-gray-500 transition-colors">Pricing</a>
+                <a href="#contact" class="hover:text-gray-500 transition-colors">Contact</a>
+              </div>
+            </nav>
+          </div>
+          <!-- Hero Section Content -->
+          <section class="max-w-3xl mx-auto text-center pt-24 sm:pt-28 pb-8 flex flex-col items-center">
+            <!-- Badge / Pill Tag -->
+            <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#e6e2fd] text-[#5e44ff] text-xs sm:text-sm font-medium mb-7 shadow-sm select-none">
+              <span class="text-sm">🌈</span>
+              <span>Acme Productivity App</span>
+            </div>
+            <!-- Headline -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#1a1a2b] leading-[1.15]">
+              Boost Your <span class="text-[#5e44ff]">Productivity</span>
+            </h1>
+            <!-- Subtitle -->
+            <p class="mt-4 sm:mt-5 text-[#3b3b4a] text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
+              Streamline your workflow with our all-in-one productivity app.
+            </p>
+            <!-- CTA Button -->
+            <div class="mt-8 sm:mt-9">
+              <button class="bg-[#1a1a2b] hover:bg-[#28283f] text-white font-medium text-xs sm:text-sm px-6 sm:px-7 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 cursor-pointer">
+                Start Free Trial
+              </button>
+            </div>
+          </section>
+        </header>
     <!-- Section-2 -->
     <!-- Section-3 -->
   </body>
