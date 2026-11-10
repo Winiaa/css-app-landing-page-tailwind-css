@@ -3,215 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
+  <title>Acme Productivity App</title>
 
+  <!-- Tailwind CSS v4 Browser CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-[#f5f5fa] min-h-screen">
+<body class="bg-[#f5f5fa] min-h-screen text-[#1a1a2b] font-sans antialiased">
 
-          <!-- Section-1 -->
-        <header class="w-full bg-[#f6f6fb] pt-6 pb-24 px-4 sm:px-6 lg:px-8">
-          <!-- Navbar Wrapper -->
-          <div class="max-w-6xl mx-auto">
-            <nav class="bg-white rounded-full px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-slate-100 flex items-center justify-between">
-              <!-- Logo: logo.png -->
-              <a href="#" class="flex items-center select-none">
-                <img src="logo.png" alt="Acme Logo" class="h-7 sm:h-8 w-auto" />
-              </a>
-              <!-- Navigation Links -->
-              <div class="flex items-center space-x-6 sm:space-x-10 text-sm font-medium text-[#1a1a2b]">
-                <a href="#home" class="hover:text-gray-500 transition-colors">Home</a>
-                <a href="#features" class="hover:text-gray-500 transition-colors">Features</a>
-                <a href="#pricing" class="hover:text-gray-500 transition-colors">Pricing</a>
-                <a href="#contact" class="hover:text-gray-500 transition-colors">Contact</a>
-              </div>
-            </nav>
+  <!-- ==========================================
+       SECTION 1: HEADER & HERO
+       ========================================== -->
+  <header class="w-full bg-[#f6f6fb] pt-4 sm:pt-6 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8">
+    
+    <!-- Navbar Container -->
+    <div class="max-w-6xl mx-auto">
+      <nav class="relative bg-white rounded-2xl lg:rounded-full px-5 sm:px-8 lg:px-10 py-3.5 sm:py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-slate-100 flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center select-none">
+          <img src="logo.png" alt="Acme Logo" class="h-6 sm:h-7 lg:h-8 w-auto" />
+        </a>
+
+        <!-- Desktop Navigation Links (แสดงเฉพาะจอคอม lg: >= 1024px ขึ้นไป) -->
+        <div class="hidden lg:flex items-center space-x-8 xl:space-x-10 text-sm font-medium text-[#1a1a2b]">
+          <a href="#home" class="hover:text-[#5e44ff] font-semibold hover:underline">Home</a>
+          <a href="#features" class="hover:text-[#5e44ff] font-semibold hover:underline">Features</a>
+          <a href="#pricing" class="hover:text-[#5e44ff] font-semibold hover:underline">Pricing</a>
+          <a href="#contact" class="hover:text-[#5e44ff] font-semibold hover:underline">Contact</a>
+        </div>
+
+        <!-- Hamburger Button (แสดงบน Mobile & Tablet ที่จอเล็กกว่า 1024px) -->
+        <button 
+          id="menu-btn" 
+          type="button" 
+          class="lg:hidden p-1.5 text-gray-700 hover:text-black focus:outline-none cursor-pointer"
+          aria-label="Toggle navigation"
+        >
+          <!-- ไอคอน 3 ขีด (Hamburger Icon) -->
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- ไอคอนกากบาท (Close Icon) -->
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu เมื่อกดปุ่ม Hamburger (Mobile & Tablet) -->
+        <div 
+          id="mobile-menu" 
+          class="hidden absolute top-full left-0 right-0 md:left-auto md:right-0 md:w-64 mt-3 bg-white rounded-2xl shadow-xl border border-slate-100 py-6 px-6 flex-col items-center md:items-end gap-5 text-center md:text-right text-base font-medium z-50 lg:hidden"
+        >
+          <a href="#home" class="text-[#5e44ff] font-semibold hover:underline">Home</a>
+          <a href="#features" class="hover:text-[#5e44ff] transition-colors">Features</a>
+          <a href="#pricing" class="hover:text-[#5e44ff] transition-colors">Pricing</a>
+          <a href="#contact" class="hover:text-[#5e44ff] transition-colors">Contact</a>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- Hero Section Content -->
+    <section class="max-w-4xl mx-auto text-center pt-12 sm:pt-20 lg:pt-24 pb-4 sm:pb-8 flex flex-col items-center px-2">
+      
+      <!-- Pill Badge Tag -->
+      <div class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#e6e2fd] text-[#5e44ff] text-xs sm:text-sm font-medium mb-5 sm:mb-7 shadow-sm select-none">
+        <span class="text-sm">🌈</span>
+        <span>Acme Productivity App</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#1a1a2b] leading-[1.2] lg:leading-[1.15]">
+        Boost Your <span class="text-[#5e44ff]">Product</span>ivity
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-4 sm:mt-5 text-[#3b3b4a] text-sm sm:text-base md:text-lg max-w-xs sm:max-w-md lg:max-w-xl font-normal leading-relaxed">
+        Streamline your workflow with our all-in-one productivity app.
+      </p>
+
+      <!-- CTA Button -->
+      <div class="mt-6 sm:mt-8 lg:mt-9 w-full sm:w-auto">
+        <button class="w-full sm:w-auto bg-[#1a1a2b] hover:bg-[#28283f] text-white font-medium text-sm sm:text-base px-7 py-3.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 cursor-pointer">
+          Start Free Trial
+        </button>
+      </div>
+
+    </section>
+  </header>
+
+
+  <!-- ==========================================
+       SECTION 2: FEATURES (CARDS WITH PNG ICONS)
+       ========================================== -->
+  <section
+    id="features"
+    aria-label="Product features"
+    class="bg-[#f5f6fa] px-4 sm:px-6 md:px-8 lg:px-10 py-10 sm:py-16"
+  >
+    <!-- Grid: 1 คอลัมน์บน Mobile -> 3 คอลัมน์บน Tablet และ Desktop (md:grid-cols-3) -->
+    <div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+
+      <!-- Card 1: Streamlined Workflows (rocket.png) -->
+      <article class="rounded-[20px] bg-[#d9e5f8] p-6 sm:p-7 flex flex-col justify-between">
+        <div>
+          <div class="mb-6 sm:mb-8 flex h-[50px] w-[50px] items-center justify-center rounded-[15px] bg-white/70">
+            <img src="rocket.png" alt="Streamlined Workflows" class="h-6 w-6 object-contain" />
           </div>
-          <!-- Hero Section Content -->
-          <section class="max-w-3xl mx-auto text-center pt-24 sm:pt-28 pb-8 flex flex-col items-center">
-            <!-- Badge / Pill Tag -->
-            <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#e6e2fd] text-[#5e44ff] text-xs sm:text-sm font-medium mb-7 shadow-sm select-none">
-              <span class="text-sm">🌈</span>
-              <span>Acme Productivity App</span>
-            </div>
-            <!-- Headline -->
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#1a1a2b] leading-[1.15]">
-              Boost Your <span class="text-[#5e44ff]">Product</span>ivity
-            </h1>
-            <!-- Subtitle -->
-            <p class="mt-4 sm:mt-5 text-[#3b3b4a] text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
-              Streamline your workflow with our all-in-one productivity app.
-            </p>
-            <!-- CTA Button -->
-            <div class="mt-8 sm:mt-9">
-              <button class="bg-[#1a1a2b] hover:bg-[#28283f] text-white font-medium text-xs sm:text-sm px-6 sm:px-7 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 cursor-pointer">
-                Start Free Trial
-              </button>
-            </div>
-          </section>
-        </header>
-    <!-- Section-2 -->
-  <body>
-    <!-- Section-1 -->
-    <section
-  id="features"
-  aria-label="Product features"
-  class="bg-[#f5f6fa] px-6 py-8 sm:px-8 lg:px-10"
->
-  <div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-    <article class="rounded-[20px] bg-[#d9e5f8] p-6">
-      <div class="mb-8 flex h-[50px] w-[50px] items-center justify-center rounded-[15px] bg-white/70 text-[#6547f5]">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
-          <path d="M21.7 2.3a.75.75 0 0 0-.72-.19C13.9 4.05 8.99 6.53 6.2 9.5l-3.05.51a1 1 0 0 0-.74 1.41l1.4 2.8a1 1 0 0 0 .45.45l2.8 1.4a1 1 0 0 0 1.41-.74l.51-3.05c2.97-2.79 5.45-7.7 7.39-14.78a.75.75 0 0 0-.67-.2ZM6.97 13.9l-.27 1.63-1.67-.84-.84-1.67 1.63-.27c.33.41.71.79 1.15 1.15Zm8.08-5.95a2 2 0 1 1 2.83-2.83 2 2 0 0 1-2.83 2.83ZM3.1 17.7c-.63.63-1.03 1.88-1.2 3.75 1.87-.17 3.12-.57 3.75-1.2.7-.7.7-1.85 0-2.55s-1.85-.7-2.55 0Z" />
-        </svg>
-      </div>
+          <h2 class="mb-2 text-[20px] font-semibold leading-7 text-[#20243a]">
+            Streamlined Workflows
+          </h2>
 
-      <h2 class="mb-2 text-[20px] font-semibold leading-7 text-[#20243a]">
-        Streamlined Workflows
-      </h2>
+          <p class="text-[14px] leading-[21px] text-[#62697b]">
+            Automate repetitive tasks and focus on high-impact work with our powerful productivity features.
+          </p>
+        </div>
+      </article>
 
-      <p class="text-[14px] leading-[21px] text-[#62697b]">
-        Automate repetitive tasks and focus on high-impact work with our powerful productivity features.
-      </p>
-    </article>
+      <!-- Card 2: Blazing Fast Performance (board.png) -->
+      <article class="rounded-[20px] bg-[#dce1ff] p-6 sm:p-7 flex flex-col justify-between">
+        <div>
+          <div class="mb-6 sm:mb-8 flex h-[50px] w-[50px] items-center justify-center rounded-[15px] bg-white/70">
+            <img src="board.png" alt="Blazing Fast Performance" class="h-6 w-6 object-contain" />
+          </div>
 
-    <article class="rounded-[20px] bg-[#dce1ff] p-6">
-      <div class="mb-8 flex h-[50px] w-[50px] items-center justify-center rounded-[15px] bg-white/70 text-[#6547f5]">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
-          <path d="M4 3.75A1.75 1.75 0 0 0 2.25 5.5v12A1.75 1.75 0 0 0 4 19.25h6.25V21h-2a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5h-2v-1.75H20a1.75 1.75 0 0 0 1.75-1.75v-12A1.75 1.75 0 0 0 20 3.75H4Zm.25 2h15.5v10.5H4.25V5.75Zm12.28 1.97a.75.75 0 0 0-1.06 0l-2.22 2.22-1.47-1.47a.75.75 0 0 0-1.06 0l-3.5 3.5a.75.75 0 1 0 1.06 1.06l2.97-2.97 1.47 1.47a.75.75 0 0 0 1.06 0l2.75-2.75a.75.75 0 0 0 0-1.06Z" />
-        </svg>
-      </div>
+          <h2 class="mb-2 text-[20px] font-semibold leading-7 text-[#20243a]">
+            Blazing Fast Performance
+          </h2>
 
-      <h2 class="mb-2 text-[20px] font-semibold leading-7 text-[#20243a]">
-        Blazing Fast Performance
-      </h2>
+          <p class="text-[14px] leading-[21px] text-[#62697b]">
+            Experience lightning-fast performance and instant responsiveness with our cutting-edge technology.
+          </p>
+        </div>
+      </article>
 
-      <p class="text-[14px] leading-[21px] text-[#62697b]">
-        Experience lightning-fast performance and instant responsiveness with our cutting-edge technology.
-      </p>
-    </article>
+      <!-- Card 3: Intuitive Interface (smile.png) -->
+      <article class="rounded-[20px] bg-[#ecdef5] p-6 sm:p-7 flex flex-col justify-between">
+        <div>
+          <div class="mb-6 sm:mb-8 flex h-[50px] w-[50px] items-center justify-center rounded-[15px] bg-white/70">
+            <img src="smile.png" alt="Intuitive Interface" class="h-6 w-6 object-contain" />
+          </div>
 
-    <article class="rounded-[20px] bg-[#ecdef5] p-6">
-      <div class="mb-8 flex h-[50px] w-[50px] items-center justify-center rounded-[15px] bg-white/70 text-[#6547f5]">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
-          <path fill-rule="evenodd" d="M12 2.25a9.75 9.75 0 1 0 0 19.5 9.75 9.75 0 0 0 0-19.5ZM8.5 9a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm5.75 1.25a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0Zm-5.8 3.64a.75.75 0 0 1 1.06.06 3.3 3.3 0 0 0 4.98 0 .75.75 0 1 1 1.12 1 4.8 4.8 0 0 1-7.22 0 .75.75 0 0 1 .06-1.06Z" clip-rule="evenodd" />
-        </svg>
-      </div>
+          <h2 class="mb-2 text-[20px] font-semibold leading-7 text-[#20243a]">
+            Intuitive Interface
+          </h2>
 
-      <h2 class="mb-2 text-[20px] font-semibold leading-7 text-[#20243a]">
-        Intuitive Interface
-      </h2>
+          <p class="text-[14px] leading-[21px] text-[#62697b]">
+            Our user-friendly interface makes it easy for anyone to streamline their workflow.
+          </p>
+        </div>
+      </article>
 
-      <p class="text-[14px] leading-[21px] text-[#62697b]">
-        Our user-friendly interface makes it easy for anyone to streamline their workflow.
-      </p>
-    </article>
+    </div>
+  </section>
 
-  </div>
-</section>
-    <!-- Section-3 -->
-<main class="max-w-5xl mx-auto px-4 pt-10">
 
-  <div class="bg-white rounded-2xl py-12 px-6">
+  <!-- ==========================================
+       SECTION 3: CONTACT FORM & FOOTER
+       ========================================== -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12">
     
-<h1 class="text-3xl font-bold text-center text-[#1d1b2e] mb-8">
-  Get in Touch
-</h1>
+    <!-- Contact Form Container: กล่องขาวมนแบนราบ ไม่มีเงา (shadow) และไม่มี border ตามแบบ Figma ภาพที่ 2 -->
+    <div class="bg-white rounded-2xl py-8 sm:py-12 px-5 sm:px-8 md:px-12">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#1d1b2e] mb-6 sm:mb-8">
+        Get in Touch
+      </h2>
 
-<form class="max-w-md mx-auto flex flex-col gap-4">
-    
-<div>
-  <label for="name" class="block text-sm text-gray-500 mb-1">
-    Name
-  </label>
+      <form class="max-w-md mx-auto flex flex-col gap-4">
+        <div>
+          <label for="name" class="block text-sm text-gray-500 mb-1">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            placeholder="John Doe"
+            class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-[#5e44ff] focus:ring-1 focus:ring-[#5e44ff]"
+          >
+        </div>
 
-  <input
-    type="text"
-    id="name"
-    placeholder="John Doe"
-    class="w-full border border-gray-200 rounded-lg p-3"
-  >
-</div>
+        <div>
+          <label for="email" class="block text-sm text-gray-500 mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="john@example.com"
+            class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-[#5e44ff] focus:ring-1 focus:ring-[#5e44ff]"
+          >
+        </div>
 
+        <div>
+          <label for="message" class="block text-sm text-gray-500 mb-1">
+            Message
+          </label>
+          <textarea
+            id="message"
+            placeholder="Your message..."
+            rows="4"
+            class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-[#5e44ff] focus:ring-1 focus:ring-[#5e44ff]"
+          ></textarea>
+        </div>
 
-<div>
-  <label for="email" class="block text-sm text-gray-500 mb-1">
-    Email
-  </label>
+        <button
+          type="submit"
+          class="w-full bg-[#1d1b2e] text-white py-3 rounded-lg font-semibold hover:bg-[#2e2b45] transition-colors cursor-pointer text-sm sm:text-base mt-2 active:scale-[0.99]"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
 
-  <input
-    type="email"
-    id="email"
-    placeholder="john@example.com"
-    class="w-full border border-gray-200 rounded-lg p-3"
-  >
-</div>
+    <!-- Footer: ตรงตามต้นแบบ Figma ภาพที่ 2 (มีเฉพาะข้อความลิขสิทธิ์ฝั่งซ้าย และลิงก์นโยบายฝั่งขวา) -->
+    <footer class="mt-12 text-sm">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-6">
+        
+        <!-- Copyright (Mobile: กึ่งกลาง / Tablet & PC: ชิดซ้าย) -->
+        <p class="text-gray-500 text-xs sm:text-sm text-center md:text-left">
+          Acme productivity app ©2024
+        </p>
 
+        <!-- Secondary Policy Links (FAQ, Terms, AI Policy, Pricing) -->
+        <div class="flex flex-wrap justify-center gap-5 sm:gap-6 font-semibold text-[#1d1b2e] text-xs sm:text-sm">
+          <a href="#" class="hover:text-[#5E44FF] transition-colors">FAQ</a>
+          <a href="#" class="hover:text-[#5E44FF] transition-colors">Terms</a>
+          <a href="#" class="hover:text-[#5E44FF] transition-colors">AI Policy</a>
+          <a href="#" class="hover:text-[#5E44FF] transition-colors">Pricing</a>
+        </div>
 
-<div>
-  <label for="message" class="block text-sm text-gray-500 mb-1">
-    Message
-  </label>
+      </div>
+    </footer>
 
-  <textarea
-    id="message"
-    placeholder="Your message..."
-    rows="4"
-    class="w-full border border-gray-200 rounded-lg p-3"
-  ></textarea>
-</div>
-
-
-<button
-  type="submit"
-  class="bg-[#1d1b2e] text-white py-3 rounded-lg font-semibold hover:bg-gray-700 cursor-pointer"
->
-  Submit
-</button>
-
-
-</form>
-
-  </div>
-
-  
-<footer class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 text-sm">
-
-  <a href="#home" class="transition-colors hover:text-[#5E44FF] hover:underline">
-    Home
-  </a>
-  
-  <a href="#features" class="transition-colors hover:text-[#5E44FF] hover:underline">
-    Features
-  </a>
-  
-  <a href="#pricing" class="transition-colors hover:text-[#5E44FF] hover:underline">
-    Pricing
-  </a>
-  
-  <a href="#contact" class="transition-colors hover:text-[#5E44FF] hover:underline">
-    Contact
-  </a>
-
-  <p class="text-gray-500">
-    Acme productivity app ©2024
-  </p>
-
-  <div class="flex gap-6 font-semibold text-[#1d1b2e]">
-    <a href="#">FAQ</a>
-    <a href="#">Terms</a>
-    <a href="#">AI Policy</a>
-    <a href="#">Pricing</a>
-  </div>
-
-</footer>
+  </main>
 
 
-</main>
+  <!-- ==========================================
+       JAVASCRIPT: TOGGLE HAMBURGER MENU
+       ========================================== -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
 
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+          menuIconOpen.classList.add('hidden');
+          menuIconClose.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+          menuIconOpen.classList.remove('hidden');
+          menuIconClose.classList.add('hidden');
+        }
+      });
+    }
+  </script>
 
 </body>
-
 </html>
