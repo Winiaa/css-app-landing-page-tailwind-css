@@ -11,7 +11,7 @@
 <body class="bg-[#F6F6FB] min-h-screen">
 
           <!-- Section-1 -->
-        <header class="w-full bg-[#f6f6fb] pt-6 pb-24 px-4 sm:px-6 lg:px-8">
+      <header class="w-full bg-[#f6f6fb] pt-6 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8">
           <!-- Navbar Wrapper -->
           <div class="max-w-6xl mx-auto">
             <nav class="bg-white rounded-full px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-slate-100 flex items-center justify-between">
@@ -20,25 +20,47 @@
                 <img src="logo.png" alt="Acme Logo" class="h-7 sm:h-8 w-auto" />
               </a>
               <!-- Navigation Links -->
-              <div class="flex items-center space-x-6 sm:space-x-10 text-sm font-medium text-[#1a1a2b]">
-                <a href="#home" class="transition-colors hover:text-[#5E44FF] hover:underline">Home</a>
-                <a href="#features" class="transition-colors hover:text-[#5E44FF] hover:underline">Features</a>
-                <a href="#pricing" class="transition-colors hover:text-[#5E44FF] hover:underline">Pricing</a>
-                <a href="#contact" class="transition-colors hover:text-[#5E44FF] hover:underline">Contact</a>
-              </div>
+           <div class="hidden lg:flex items-center gap-6">
+  <a href="#home">Home</a>
+  <a href="#features">Features</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact">Contact</a>
+</div>
+<button
+  id="menu-btn"
+  type="button"
+  class="lg:hidden text-2xl cursor-pointer"
+  aria-label="Open menu"
+  aria-expanded="false"
+  aria-controls="mobile-menu"
+>
+  ☰
+</button>
             </nav>
+            <div
+  id="mobile-menu"
+  class="hidden lg:hidden bg-white rounded-2xl mt-3 p-5 shadow-md"
+>
+  <div class="flex flex-col gap-4">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
           </div>
           <!-- Hero Section Content -->
-          <section class="max-w-3xl mx-auto text-center pt-24 sm:pt-28 pb-8 flex flex-col items-center">
+     <section class="max-w-3xl mx-auto text-center pt-12 sm:pt-20 lg:pt-28 pb-8 flex flex-col items-center">
             <!-- Badge / Pill Tag -->
             <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#e6e2fd] text-[#5e44ff] text-xs sm:text-sm font-medium mb-7 shadow-sm select-none">
               <span class="text-sm">🌈</span>
               <span>Acme Productivity App</span>
             </div>
             <!-- Headline -->
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#1a1a2b] leading-[1.15]">
-              Boost Your <span class="text-[#5e44ff]">Productivity</span>
-            </h1>
+         <h1 class="text-3xl sm:text-4xl lg:text-6xl font-black text-center">
+  Boost Your
+  <span class="text-[#5e44ff]">Productivity</span>
+</h1>
             <!-- Subtitle -->
             <p class="mt-4 sm:mt-5 text-[#3b3b4a] text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
               Streamline your workflow with our all-in-one productivity app.
@@ -57,7 +79,7 @@
   aria-label="Product features"
   class="bg-[#f5f6fa] px-6 py-8 sm:px-8 lg:px-10"
 >
-  <div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 md:grid-cols-3 gap-4">
 
     <article class="rounded-[20px] bg-[#d9e5f8] p-6">
       <div class="mb-8 flex h-[50px] w-[50px] items-center justify-center rounded-[15px] bg-white/70 text-[#6547f5]">
@@ -114,11 +136,10 @@
 
   <div class="rounded-3xl bg-white px-6 py-12">
     
-<h1 class="text-5xl font-bold text-center text-[#1A1A2C] mb-8">
+<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#1A1A2C] mb-8">
   Get in Touch
 </h1>
-
-<form class="mx-auto flex max-w-[589px] flex-col gap-4">
+<form class="mx-auto flex w-full max-w-[589px] flex-col gap-4">
     
 <div>
   <label for="name" class="block text-sm text-gray-500 mb-1">
@@ -180,8 +201,7 @@
   <p class="text-gray-500">
     Acme productivity app ©2024
   </p>
-
-  <div class="flex gap-6 font-semibold text-[#1d1b2e]">
+<div class="flex flex-wrap justify-center gap-4 sm:gap-6 font-semibold text-[#1d1b2e]">
     <a href="#" class="transition-colors hover:text-[#5E44FF] hover:underline">FAQ</a>
     <a href="#" class="transition-colors hover:text-[#5E44FF] hover:underline">Terms</a>
     <a href="#" class="transition-colors hover:text-[#5E44FF] hover:underline">AI Policy</a>
@@ -193,6 +213,17 @@
 
 </main>
 
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+
+    const isOpen = !mobileMenu.classList.contains("hidden");
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+  });
+</script>
 
 </body>
 
